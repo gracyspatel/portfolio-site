@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -22,7 +23,7 @@ export default function About() {
             Beyond code and outside screen, I'm a <b>artist</b> with a love for
             painting and how it shapes patterns, aesthetics, and emotion flow
             into each project — whether visual or technical. Art grounds me —
-            and inspires the way I approach <b>systems</b>, <b>patterns</b>, and{" "}
+            and inspires the way I approach <b>systems</b>, <b>patterns</b>, and &nsbp;
             <b>design</b>.
           </p>
 
@@ -32,7 +33,7 @@ export default function About() {
           </p>
         </div>
         <div className="grid grid-cols-6 gap-x-8 gap-y-6 mt-12 text-base/7 font-semibold">
-          <a
+          <Link
             href="#"
             className="text-sm/6 flex items-center gap-2 font-semibold text-gray-900"
           >
@@ -43,8 +44,8 @@ export default function About() {
               width={16}
               height={16}
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="text-sm/6 flex items-center gap-2 font-semibold text-gray-900"
           >
@@ -56,8 +57,8 @@ export default function About() {
               width={16}
               height={16}
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="text-sm/6 flex items-center gap-2 font-semibold text-gray-900"
           >
@@ -69,8 +70,8 @@ export default function About() {
               width={16}
               height={16}
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="text-sm/6 flex items-center gap-2 font-semibold text-gray-900"
           >
@@ -82,8 +83,8 @@ export default function About() {
               width={16}
               height={16}
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="text-sm/6 flex items-center gap-2 font-semibold text-gray-900"
           >
@@ -95,7 +96,7 @@ export default function About() {
               width={16}
               height={16}
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
