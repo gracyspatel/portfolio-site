@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col gap-[32px] items-center sm:items-start mx-auto max-w-2xl p-8 sm:p-4 py-28 sm:py-28 lg:py-32">
             <div className="text-left">
             <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Shaping Ideas Through Technology</h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Computer Science Engineer | ML Learner | Designer & Developer | Quietly Creative & Minimal</p>
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Computer Science Engineer , ML Learner , Designer & Developer , Quietly Creative & Minimal</p>
             </div>
             <div className="flex gap-4 items-center flex-col sm:flex-row">
               <Link
