@@ -11,7 +11,7 @@ export default function About() {
           </h2>
           <p>A minimal mind shaped by code, design, and machine learning.</p>
           <p className="mt-8 mb-2 text-lg text-pretty sm:text-lg/8">
-            I’m Gracy Patel — A <b>Computer Science engineer</b> crafting at the
+            I am Gracy Patel — A <b>Computer Science engineer</b> crafting at the
             crossroads of logic, design, and intelligent systems. Passionate
             about building clean, intuitive interfaces (
             <b>full-stack development</b>) while experimenting with the creative
@@ -20,7 +20,7 @@ export default function About() {
           </p>
 
           <p className="mt-8 mb-2 text-lg text-pretty sm:text-lg/8">
-            Beyond code and outside screen, I'm a <b>artist</b> with a love for
+            Beyond code and outside screen, I am a <b>artist</b> with a love for
             painting and how it shapes patterns, aesthetics, and emotion flow
             into each project — whether visual or technical. Art grounds me —
             and inspires the way I approach <b>systems</b>, <b>patterns</b>, and &nsbp;
