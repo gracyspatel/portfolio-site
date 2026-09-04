@@ -1,0 +1,171 @@
+{
+  "name": "Gracy Sanjaykumar Patel",
+  "title": "MS Computer Science w/ AI Specialization at USC",
+  "summary": "I'm drawn to machine learning and AI, and I like working close to the core — the optimization and fundamentals underneath the models, not just the tools built on top. I enjoy building things from scratch, and I like to understand the internals of models and algorithms.",
+  "links": {
+    "email": "gracy.patel@usc.edu",
+    "github": "https://github.com/gracyspatel",
+    "linkedin": "https://www.linkedin.com/in/gracy-patel/",
+    "resume": "/resume.pdf",
+    "leetcode": "https://leetcode.com/gracyP/"
+  },
+  "heroFacts": [
+    { "label": "Based in", "value": "Los Angeles, CA" },
+    { "label": "Currently", "value": "Student, MS Computer Science @ USC (specializing in AI/ML)" },
+    { "label": "Looking for", "value": "ML Engineering, FDE, and Applied AI/Research roles" },
+    {
+        "label": "Skills", "value": "Python ML/AI Systems · Python · NLP · RL · LLMs · PyTorch · TensorFlow · SQL · C++ · JavaScript"
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Southern California | USC - Viterbi School of Engineering",
+      "dates": "2026 – Present",
+      "degree": "MS Computer Science, specialization in AI",
+      "detail": "Coursework: Large Scale Optimization & ML, Applied NLP, Analysis of Algorithms, Foundations of AI"
+    },
+    {
+      "school": "Charusat University | Devang Patel Institute of Advance Technology and Research (DEPSTAR)",
+      "dates": "Graduated",
+      "degree": "B.Tech, Computer Science and Engineering",
+      "detail": "Active member of Computer Society of India (CSI), led the DEPSTAR Coding Club aswell as a hackathon project team. Assisted university professors in organizing conferences and expert talks by supporting planning, coordination, and event execution. Coursework: Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Software Engineering, Compiler Design, Artificial Intelligence"
+    },
+    {
+        "school": "Saraswati International School, Valsad, Gujarat, India",
+        "dates": "Graduated",
+        "degree": "Higher Secondary School Certificate (HSC), Science Stream",
+        "detail": "Coursework: Physics, Chemistry, Mathematics, Computer Science"
+    }
+  ],
+  "coursework": [
+  {
+    "name": "TensorFlow for Deep Learning Bootcamp",
+    "issuer": "Udemy — Andrei Neagoie & Daniel Bourke",
+    "link": "https://www.udemy.com/certificate/UC-61a18063-3078-4b8b-93bf-660ca15a8cf3/"
+  },
+  {
+    "name": "Introduction to Virtual Reality",
+    "issuer": "University of London, Coursera",
+    "link": "https://coursera.org/share/8212c8529a5970c5f4d8d2bcbf37d8ba"
+  },
+  {
+    "name": "Object Oriented Programming in Java",
+    "issuer": "University of California San Diego, Coursera",
+    "link": "https://coursera.org/share/2913bca27cac90958ce9e496b1fb916f"
+  },
+  {
+    "name": "Introduction to Machine Learning",
+    "issuer": "Kaggle",
+    "link": "https://www.kaggle.com/learn/certification/gracy1168/intro-to-machine-learning"
+  },
+  {
+    "name": "Microsoft AI Classroom Series",
+    "issuer": "Microsoft",
+    "link": "https://drive.google.com/file/d/1RAeSyU1Wk5pNX0r4azkzdttjelGPJUlX/view?usp=sharing"
+  }
+],
+  "projects": [
+  {
+    "name": "WbNews",
+    "subtitle": "News Genre Classification & Web Scraping",
+    "tech": ["Python", "Machine Learning", "NLP", "Web Scraping", "React.js", "Flask API"],
+    "link": "",
+    "bullets": [
+      "Built a Python ML system using NLP to classify news articles by genre (politics, sports, entertainment, business) and detect fake news in text-based data.",
+      "Applied data preprocessing, TF-IDF, and Word2Vec feature extraction; evaluated and optimized models with GridSearchCV.",
+      "Used Support Vector Machine for multi-class genre classification and binary fake news detection, reaching 86% accuracy.",
+      "Fetches and bifurcates news articles via web scraping and displays them on the web."
+    ]
+  },
+  {
+    "name": "CodeNext",
+    "subtitle": "DSA Next Question Predictor",
+    "tech": ["Data Science", "React.js", "Python", "Flask"],
+    "link": "",
+    "bullets": [
+      "Developed a content-based recommendation system predicting similar coding problems on LeetCode data and predicting question difficulty.",
+      "Cleaned and processed 1,800+ problems, handling skewed distributions with scaling, multi-hot encoding, categorical encoding, and TF-IDF embeddings.",
+      "Trained and optimized Naive Bayes, Random Forest, and XGBoost models for 3-class difficulty classification (Easy/Medium/Hard), improving baseline accuracy from 44% to ~80% with XGBoost and embeddings.",
+      "Used Bag-of-Words, CountVectorizer, and Cosine Similarity to suggest similar questions based on text and tags."
+    ]
+  },
+  {
+    "name": "Recommendo",
+    "subtitle": "Content-Based Movie Recommendation System",
+    "tech": ["Machine Learning", "Python"],
+    "link": "",
+    "bullets": [
+      "Built a content-based movie recommendation system using bag-of-words and cosine similarity on title, description, and tagline data.",
+      "Achieved strong precision, recall, and RMSE scores on top-5 recommendation metrics.",
+      "Built a web application for easy access, generating the top 5 similar movies based on a selected movie."
+    ]
+  },
+  {
+    "name": "HeirsAgent",
+    "subtitle": "Game-Playing Agent",
+    "tech": ["Python", "Search & Decision-Making"],
+    "link": "",
+    "bullets": [
+      "Built a game-playing agent using minimax with alpha-beta pruning."
+    ]
+  },
+  {
+    "name": "Backpropagation & Gradient Descent Visualizer",
+    "subtitle": "ML Fundamentals, Built From Scratch",
+    "tech": ["Python", "No ML Libraries"],
+    "link": "",
+    "bullets": [
+      "Built entirely without ML libraries — implements backpropagation and gradient descent from first principles.",
+      "Anchors a fundamentals-over-frameworks approach across the portfolio."
+    ]
+  }
+],
+  "miniProjects": [
+  { "name": "MedX", "desc": "Hospital/Clinic Management System" },
+  { "name": "Emplox", "desc": "Employee performance prediction using Random Forest (~85% accuracy)" }
+],
+  "skills": [
+    { "category": "Languages", "value": "Python, Java, C++, SQL, JavaScript" },
+    { "category": "ML / AI", "value": "PyTorch, TensorFlow, scikit-learn, NumPy, Pandas" },
+    { "category": "Web", "value": "Next.js, React, Node.js, Tailwind CSS" }
+  ],
+  
+  "experience": [
+  {
+    "company": "1Rivet",
+    "role": "Machine Learning Intern",
+    "dates": "Jan 2023 – Jul 2023",
+    "location": "Valsad, Gujarat",
+    "type": "Internship",
+    "bullets": [
+      "Implemented Emplox (Employee Performance Prediction) using various ML algorithms, resulting in more accurate employee performance predictions.",
+      "Applied SVM, Naive Bayes, Random Forest, Linear Regression, and Neural Networks, with data preprocessing, feature engineering, and hyperparameter tuning to improve prediction accuracy by 15–20% across projects.",
+      "Collaborated with mentors to select, integrate, and deploy validated models into web applications built with Django and Flask, monitoring performance and maintaining documentation.",
+      "Mini project: MedX (Hospital/Clinic Management System)"
+    ]
+  },
+  {
+    "company": "ISRO(SAC) - Indian Space Research Organization | Space Applications Centre",
+    "role": "Research Assistant — Remote",
+    "dates": "Dec 2022 – Jul 2023",
+    "location": "Ahmedabad, Gujarat",
+    "type": "Internship",
+    "bullets": [
+      "Led development of a web-based platform analyzing water body health using historical data analysis to assess water quality metrics.",
+      "Leveraged Google Earth Engine to process and visualize environmental datasets for water body health assessments.",
+      "Implemented data visualization tools to monitor water quality parameters, enabling evidence-based environmental decision-making."
+    ]
+  },
+  {
+    "company": "Avea Media Pvt Ltd",
+    "role": "Freelance Software Developer",
+    "dates": "Jun 2021 – Jul 2021",
+    "location": "",
+    "bullets": [
+      "Developed a creative and interactive dashboard for the company's data-visualization project using React.js, Chart.js, and Material UI.",
+      "Worked with the Data Analytics team to understand and analyze data, transforming insights into meaningful visual representations."
+    ]
+  }
+]
+
+}
