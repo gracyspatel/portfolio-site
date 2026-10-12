@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Gracy Patel",
-  description: "A woman with tech and design skills",
+  description: "MS CS (AI/ML) @ USC Viterbi | Seeking Summer 2027 SWE & ML Internships",
 };
 
 export default function RootLayout({

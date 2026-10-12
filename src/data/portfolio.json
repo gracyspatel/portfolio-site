@@ -12,7 +12,7 @@
   "heroFacts": [
     { "label": "Based in", "value": "Los Angeles, CA" },
     { "label": "Currently", "value": "Student, MS Computer Science @ USC (specializing in AI/ML)" },
-    { "label": "Looking for", "value": "ML Engineering, FDE, and Applied AI/Research roles" },
+    { "label": "Looking for", "value": "ML Engineering, and Applied AI/Research roles" },
     {
         "label": "Skills", "value": "Python ML/AI Systems · Python · NLP · RL · LLMs · PyTorch · TensorFlow · SQL · C++ · JavaScript"
     }
@@ -20,7 +20,7 @@
   "education": [
     {
       "school": "University of Southern California | USC - Viterbi School of Engineering",
-      "dates": "2026 – Present",
+      "dates": "2026 – Expected 2027",
       "degree": "MS Computer Science, specialization in AI",
       "detail": "Coursework: Large Scale Optimization & ML, Applied NLP, Analysis of Algorithms, Foundations of AI"
     },
