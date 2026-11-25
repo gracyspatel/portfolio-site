@@ -355,7 +355,19 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; }
 .avatar { display: none; width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; border: 1px solid var(--line); filter: sepia(0.15); }
-@media (max-width: 1240px) { .print.hero-photo { display: none; } .avatar { display: block; } }
+/* narrower screens: the photo print sits below the hero content, with a "that's me" note */
+.hero-print-m { display: none; }
+@media (max-width: 1240px) {
+  .print.hero-photo { display: none; }
+  .hero-print-m { display: flex; flex-direction: column; align-items: center; margin-top: 30px; }
+  .hp-row { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .hn-me2 { flex-direction: column; align-items: center; margin: 0 0 4px; }
+  .hn-me2 .hn-t { font-size: 1.05rem; }
+  .hn-me2 .ha { width: 40px; height: 28px; transform: rotate(4deg); }
+  .hero-print-m .print { transform: rotate(3deg); margin: 0; }
+  .hero-print-m .print img { width: 150px; height: 185px; object-position: 50% 25%; }
+  .hero-print-m figcaption { max-width: 150px; margin: 8px auto 0; font-size: 1rem; line-height: 1.1; }
+}
 
 /* ---------- Motto + hand-drawn diagram (About) ---------- */
 /* About: intro + labelled notes in the sans, beside the photo print */
@@ -391,6 +403,17 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 .motto-svg .cap { fill: var(--ink); font-size: 22px; font-weight: 600; }
 .motto-svg .axis-t { fill: var(--muted); font: 13px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
 @media (max-width: 720px) { .motto { padding: 24px 14px 16px; } .motto blockquote p { font-size: 1.2rem; } .about-facts div { grid-template-columns: 1fr; gap: 2px; } .about-lead { font-size: 1.15rem; } }
+
+/* ---------- Logo ---------- */
+.logo { display: block; flex: none; }
+.logo .lg-ring { fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.logo .lg-inner { fill: none; stroke: var(--line); stroke-width: 0.8; }
+.logo .lg-ticks { stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; }
+.logo .lg-text { font: 400 23px var(--name); fill: var(--ink); stroke: var(--ink); stroke-width: 0.5; letter-spacing: 0.5px; }
+.logo .lg-dot { fill: var(--accent); }
+.logo-nav { width: 34px; height: 34px; }
+.logo-foot { width: 52px; height: 52px; margin-bottom: 6px; }
+.footer::before { display: none; }
 
 /* ---------- Second ink: anatomical blue for links and fine details ---------- */
 a, .links a, .row-foot a { color: var(--vein); }

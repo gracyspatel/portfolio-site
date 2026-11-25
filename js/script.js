@@ -72,6 +72,12 @@ function mottoSVG() {
   </svg>`;
 }
 
+// ---------- Logo: "GP" monogram in an atlas seal (same design as assets/logo.svg, the favicon) ----------
+const logoSVG = (cls = '') => `<svg class="logo ${cls}" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="30" class="lg-ring"/><circle cx="32" cy="32" r="25.5" class="lg-inner"/>
+  <path d="M32 2v5 M32 57v5 M2 32h5 M57 32h5" class="lg-ticks"/>
+  <text x="32" y="40" text-anchor="middle" class="lg-text">GP</text><circle cx="32" cy="49" r="1.8" class="lg-dot"/></svg>`;
+
 // ---------- Vertebra glyph for the skills "spine" ----------
 const VERTEBRA = `<svg class="bone" viewBox="0 0 64 40" aria-hidden="true" focusable="false">
   <path d="M20 12 C20 8 44 8 44 12 L45 26 C45 31 19 31 19 26 Z"/>
@@ -187,6 +193,8 @@ function renderHero(d) {
         ${primaryLinks(d, 'btn ghost')}
       </div>
       <div class="cta-notes">${note(N.hero, 'swoop', 'pink', 'hn-hero')}</div>
+      ${p.photo ? `<div class="hero-print-m">${note(N.offscreen, 'hook', 'blue', 'hn-me2')}<div class="hp-row">
+        <figure class="print"><img src="${safeUrl(p.photo)}" alt="${esc(L.photoAlt || p.name)}" width="150" height="185" loading="lazy">${L.photoCaption ? `<figcaption>${esc(L.photoCaption)}</figcaption>` : ''}</figure></div></div>` : ''}
     </div>
     ${note(N.atlas, 'long', 'pink', 'hn-side hn-atlas')}
     ${note(N.heroLeft, 'long', 'sage', 'hn-side hn-left')}
@@ -367,7 +375,7 @@ function build(d) {
 
   document.title = [p.name, L.concept].filter(Boolean).join(' · ');
   document.querySelector('meta[name="description"]').content = [p.tagline, p.status].filter(Boolean).join(' ');
-  document.getElementById('brand').innerHTML = (p.photo ? `<img class="avatar" src="${safeUrl(p.photo)}" alt="" width="30" height="30">` : '') + esc(p.name || '');
+  document.getElementById('brand').innerHTML = logoSVG('logo-nav') + esc(p.name || '');
   document.getElementById('skip').textContent = L.skip || 'Skip to content';
   document.getElementById('menu-btn').textContent = L.menu || 'Index';
   document.getElementById('top').innerHTML = renderHero(d);
@@ -397,6 +405,7 @@ function build(d) {
   // Footer: name, tagline, every profile link + email, back to top, copyright
   const all = [...(p.links || []).map((l) => link(l.url, l.label)), p.email ? link('mailto:' + p.email, p.email) : ''].filter(Boolean);
   document.getElementById('footer').innerHTML = `
+    ${logoSVG('logo-foot')}
     <p class="f-name">${esc(p.name)}</p>
     ${p.tagline ? `<p class="f-tag">${esc(p.tagline)}</p>` : ''}
     ${all.length ? `<p class="f-links">${all.join('')}</p>` : ''}
