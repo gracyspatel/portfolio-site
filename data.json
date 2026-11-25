@@ -39,7 +39,8 @@
         "label": "Medium",
         "url": "https://medium.com/@gracy1168"
       }
-    ]
+    ],
+    "photo": "assets/portrait.jpg"
   },
   "labels": {
     "concept": "The Anatomy of Intelligence",
@@ -65,7 +66,9 @@
     "contactTitle": "Write to me.",
     "contactMessage": "I'm looking for Summer 2027 internships in software engineering and machine learning. Email is the fastest way to reach me.",
     "details": "Problem, contribution & figure",
-    "top": "Back to top ↑"
+    "top": "Back to top ↑",
+    "photoAlt": "Portrait of Gracy Patel",
+    "photoCaption": "that's me"
   },
   "notes": {
     "hero": "start here",
@@ -76,11 +79,10 @@
     "research": "currently exploring...",
     "about": "a little more about me",
     "heroLeft": "open to internships, Summer 2027",
-    "heroRight": "a software engineer who paints",
     "focus": "current focus",
     "contact": "fastest way to reach me",
     "atlas": "welcome to my atlas",
-    "code": "the code lives here"
+    "offscreen": "off screen: travelling, staying active, art & painting"
   },
   "sections": [
     {
@@ -610,8 +612,34 @@
       "note": "next on my list"
     }
   ],
-  "about": [
-    "I studied computer science at CHARUSAT, then worked across the stack: a geospatial analytics platform at ISRO's Space Applications Centre, ML models at 1Rivet, and a full-stack operations platform at Codise. Now I'm at USC, focusing on artificial intelligence.",
-    "I'm most interested in where AI, computer science and design meet. I like taking systems apart to see how they work, and I care about how things look as much as how they work. Away from code, I paint."
-  ]
+  "about": {
+    "lead": "I'm Gracy. I like knowing how things work underneath, from backpropagation written without ML libraries to a KV cache built up from a bigram model.",
+    "items": [
+      {
+        "label": "Now",
+        "text": "MS in AI at USC in Los Angeles, testing whether published defenses for AI agents actually hold up, and looking for Summer 2027 internships."
+      },
+      {
+        "label": "Drawn to",
+        "text": "The place where AI, computer science and design meet."
+      },
+      {
+        "label": "Off screen",
+        "text": "Travelling, staying active and painting, and collecting stories from the people I meet along the way. I'm usually the one who turns a quick coffee into a two-hour conversation."
+      }
+    ]
+  },
+  "aboutPhoto": {
+    "src": "assets/photo-3.jpg",
+    "alt": "Gracy Patel from behind, looking at a city skyline across the water",
+    "caption": "somewhere by the water"
+  },
+  "motto": {
+    "lines": [
+      "Outlier by design, not in everyone's dataset.",
+      "Every setback = epoch. Grit, optimized.",
+      "Converging on greatness, built to generalize."
+    ],
+    "caption": "How I train: a sketch."
+  }
 }

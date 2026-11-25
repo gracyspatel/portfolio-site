@@ -46,6 +46,32 @@ const arrow = (shape) => {
 const note = (text, shape, color, cls = '') =>
   text ? `<span class="hn ${color} ${cls}" aria-hidden="true"><span class="hn-t">${esc(text)}</span>${arrow(shape)}</span>` : '';
 
+// ---------- Hand-drawn motto diagram: an outlier, and a loss curve that converges ----------
+function mottoSVG() {
+  // left: a cluster of points and one circled outlier
+  const pts = [[70,170],[84,158],[96,176],[104,150],[118,166],[90,140],[128,154],[110,184],[76,148],[136,174],[100,162],[122,138],[88,186],[144,160]];
+  const dots = pts.map(([x, y]) => `<circle class="pt" cx="${x}" cy="${y}" r="3.2"/>`).join('');
+  // right: accuracy rises toward "greatness" with three setbacks; validation follows (generalizes); loss falls below
+  const acc = 'M372 176 C392 168 400 156 414 150 C424 146 430 160 440 156 C456 148 466 116 484 106 C496 100 502 114 512 110 C528 102 546 80 566 74 C578 70 584 82 594 78 C612 70 636 58 676 54';
+  const val = 'M372 186 C394 178 404 166 418 160 C430 156 436 168 446 166 C462 158 470 126 488 116 C500 110 508 122 518 120 C534 112 550 90 570 84 C584 80 590 90 600 88 C618 80 640 66 676 62';
+  const loss = 'M372 188 C410 196 440 200 480 203 C540 206 600 207 676 208';
+  return `<svg class="motto-svg" viewBox="0 0 700 250" role="img" aria-label="Hand-drawn sketch: a scatter plot with one circled outlier labelled me, and an accuracy curve that rises with small setbacks toward a line labelled greatness, with a validation curve following it and a loss curve falling below">
+    <g class="axes"><path d="M40 34 C39 90 41 150 40 208 C110 209 200 207 290 208"/><path d="M350 30 C349 90 351 150 350 214 C450 215 560 213 690 214"/></g>
+    <g class="dots">${dots}<circle class="pt out" cx="246" cy="62" r="4"/></g>
+    <path class="ring" d="M232 58 C232 44 262 42 262 60 C262 76 234 80 231 64 C230 56 238 50 248 50"/>
+    <path class="pen" d="M214 92 C206 104 194 108 180 106 M214 92 l-2 9 M214 92 l-9 -1"/>
+    <text class="lbl" x="160" y="126">me</text>
+    <text class="cap" x="40" y="240">outlier by design</text>
+    <path class="goal" d="M352 46 H690"/><text class="lbl goal-t" x="586" y="36">greatness</text>
+    <path class="loss" d="${loss}"/><path class="val" d="${val}"/><path class="train" d="${acc}"/>
+    <text class="lbl small" x="384" y="130">setback</text><text class="lbl small" x="452" y="84">setback</text><text class="lbl small" x="528" y="58">setback</text>
+    <text class="cap" x="350" y="242">every setback = an epoch</text>
+    <text class="axis-t" x="358" y="26">accuracy</text><text class="axis-t" x="640" y="230">epochs</text>
+    <text class="lbl small val-t" x="586" y="112">val · generalizes</text>
+    <text class="lbl small loss-t" x="612" y="196">loss</text>
+  </svg>`;
+}
+
 // ---------- Vertebra glyph for the skills "spine" ----------
 const VERTEBRA = `<svg class="bone" viewBox="0 0 64 40" aria-hidden="true" focusable="false">
   <path d="M20 12 C20 8 44 8 44 12 L45 26 C45 31 19 31 19 26 Z"/>
@@ -151,7 +177,6 @@ function renderHero(d) {
     <div class="hero-text">
       <p class="kicker">${esc(L.plate)} I · ${esc(L.concept)}</p>
       <h1>${esc(p.name)}</h1>
-      ${note(N.heroRight, 'hook', 'blue', 'hn-m')}
       <ul class="roles">${(p.roles || []).map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
       ${p.intro ? `<p class="intro">${esc(p.intro)}</p>` : ''}
       ${p.status ? `<p class="status">${esc(p.status)}</p>` : ''}
@@ -161,11 +186,12 @@ function renderHero(d) {
         ${resumeBtn(d, '')}
         ${primaryLinks(d, 'btn ghost')}
       </div>
-      <div class="cta-notes">${note(N.hero, 'swoop', 'pink', 'hn-hero')}${note(N.code, 'swoop', 'blue', 'hn-hero hn-code')}</div>
+      <div class="cta-notes">${note(N.hero, 'swoop', 'pink', 'hn-hero')}</div>
     </div>
     ${note(N.atlas, 'long', 'pink', 'hn-side hn-atlas')}
     ${note(N.heroLeft, 'long', 'sage', 'hn-side hn-left')}
-    ${note(N.heroRight, 'loop', 'blue', 'hn-side hn-right')}
+    ${note(N.offscreen, 'hook', 'blue', 'hn-side hn-off')}
+    ${p.photo ? `<figure class="print hero-photo"><img src="${safeUrl(p.photo)}" alt="${esc(L.photoAlt || p.name)}" width="130" height="160">${L.photoCaption ? `<figcaption>${esc(L.photoCaption)}</figcaption>` : ''}</figure>` : ''}
   </div>`;
 }
 
@@ -255,10 +281,24 @@ const render = {
         ${r.link ? `<p class="links">${link(r.link, 'Read ↗')}</p>` : ''}</li>`).join('')}</ol>
     </div>`,
 
-  about: (d) => `
-    <div class="about">
-      <div class="about-text">${(d.about || []).map((t) => `<p>${esc(t)}</p>`).join('')}</div>
-    </div>`,
+  // About: photo print + a short intro with labelled notes; the motto and sketch as a taped notebook page below.
+  about: (d) => {
+    const a = d.about || {}, ph = d.aboutPhoto, m = d.motto;
+    return `
+    <div class="about${ph ? ' with-photos' : ''}">
+      ${ph ? `<figure class="print"><img src="${safeUrl(ph.src)}" alt="${esc(ph.alt || '')}" width="190" height="240" loading="lazy">
+        ${ph.caption ? `<figcaption>${esc(ph.caption)}</figcaption>` : ''}</figure>` : ''}
+      <div class="about-body">
+        ${a.lead ? `<p class="about-lead">${esc(a.lead)}</p>` : ''}
+        ${(a.items || []).length ? `<dl class="about-facts">${a.items.map((x) => `<div><dt>${esc(x.label)}</dt><dd>${esc(x.text)}</dd></div>`).join('')}</dl>` : ''}
+      </div>
+    </div>
+    ${m ? `<figure class="motto">
+      <blockquote>${(m.lines || []).map((l) => `<p>${esc(l)}</p>`).join('')}</blockquote>
+      ${mottoSVG()}
+      ${m.caption ? `<figcaption><span class="fig-no">Fig. ${plateNo(d, 'about')}.1</span> ${esc(m.caption)}</figcaption>` : ''}
+    </figure>` : ''}`;
+  },
 
   contact: (d) => {
     const p = d.profile, L = d.labels;
@@ -327,7 +367,7 @@ function build(d) {
 
   document.title = [p.name, L.concept].filter(Boolean).join(' · ');
   document.querySelector('meta[name="description"]').content = [p.tagline, p.status].filter(Boolean).join(' ');
-  document.getElementById('brand').textContent = p.name || '';
+  document.getElementById('brand').innerHTML = (p.photo ? `<img class="avatar" src="${safeUrl(p.photo)}" alt="" width="30" height="30">` : '') + esc(p.name || '');
   document.getElementById('skip').textContent = L.skip || 'Skip to content';
   document.getElementById('menu-btn').textContent = L.menu || 'Index';
   document.getElementById('top').innerHTML = renderHero(d);
@@ -363,6 +403,7 @@ function build(d) {
     <p class="f-meta"><a href="#top">${esc(L.top || 'Back to top')}</a><span>© ${new Date().getFullYear()} ${esc(p.name)}</span></p>`;
 
   setupBackdrop();
+  document.querySelectorAll('.avatar, .print img').forEach((img) => { img.onerror = () => (img.closest('figure') || img).remove(); });
   setupMenu();
   setupNavShadow();
   setupCopy(d);

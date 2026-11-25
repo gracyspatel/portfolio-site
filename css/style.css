@@ -273,8 +273,6 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 
 /* ---------- About ---------- */
 .about { max-width: 900px; }
-.about-text p { font: 500 clamp(1.3rem, 2vw, 1.6rem)/1.5 var(--serif); }
-.about-text p + p { margin-top: 18px; }
 /* ---------- Contact ---------- */
 .contact { padding-bottom: 24px; }
 .contact-title { font: italic 500 clamp(2.6rem, 6vw, 4.6rem)/1 var(--serif); }
@@ -314,6 +312,12 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 .hn-contact { margin-left: 8px; flex-direction: row-reverse; align-items: center; }
 .hn-contact .ha { transform: scaleX(-1) rotate(-10deg); width: 120px; height: 50px; }
 .hn-atlas { left: 2%; top: -6px; }
+/* subtle aside above the photo print */
+.hn-off { right: 30px; top: 92px; flex-direction: column; align-items: flex-end; gap: 0; opacity: 0.85; }
+.hn-off .hn-t { width: 230px; white-space: normal; text-align: right; font-size: 1.05rem; line-height: 1.15; }
+.hn-off .ha { width: 50px; height: 36px; margin-right: 70px; transform: rotate(6deg); }
+.cta-notes .hn-hero:only-child { margin-left: -230px; }
+@media (max-width: 720px) { .cta-notes .hn-hero:only-child { margin-left: -120px; } }
 .hn-atlas .ha { transform: rotate(-14deg); margin-left: 60px; }
 /* inline versions of the side notes, for narrower screens */
 .hn-m { display: none; }
@@ -332,6 +336,60 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
   .cta-notes { gap: 4px 28px; }
   .hn-contact .ha { width: 70px; }
 }
+
+/* ---------- Small portrait: over empty hero space on wide screens, in the navbar elsewhere ---------- */
+.print.hero-photo { position: absolute; right: 80px; top: 215px; margin: 0; transform: rotate(3deg); }
+.print.hero-photo img { width: 130px; height: 160px; object-position: 50% 25%; }
+.print.hero-photo::before { width: 52px; margin-left: -26px; transform: rotate(-4deg); }
+/* About: two small framed circles beside the text */
+.about.with-photos { display: flex; gap: 48px; align-items: flex-start; max-width: 1000px; }
+/* About: one small photo print with a strip of tape and a handwritten caption */
+.print { position: relative; flex: none; margin: 6px 0 0; padding: 10px 10px 12px; background: #FBF7EF; box-shadow: 0 8px 20px -12px rgba(70, 45, 25, 0.45); transform: rotate(-2.5deg); }
+.print::before { content: ""; position: absolute; top: -10px; left: 50%; width: 64px; height: 20px; margin-left: -32px; background: rgba(214, 196, 160, 0.6); transform: rotate(3deg); }
+.print img { display: block; width: 190px; height: 240px; object-fit: cover; object-position: 45% 62%; filter: sepia(0.15); }
+.print figcaption { margin-top: 8px; text-align: center; font: 600 1.15rem/1 var(--hand); font-style: normal; color: var(--blue-ink); }
+@media (max-width: 720px) {
+  .about.with-photos { flex-direction: column; gap: 28px; }
+  .print img { width: 160px; height: 200px; }
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.avatar { display: none; width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; border: 1px solid var(--line); filter: sepia(0.15); }
+@media (max-width: 1240px) { .print.hero-photo { display: none; } .avatar { display: block; } }
+
+/* ---------- Motto + hand-drawn diagram (About) ---------- */
+/* About: intro + labelled notes in the sans, beside the photo print */
+.about-body { max-width: 640px; }
+.about-lead { font: 500 1.3rem/1.55 var(--sans); color: var(--ink); }
+.about-facts { display: grid; gap: 14px; margin: 26px 0 0; }
+.about-facts div { display: grid; grid-template-columns: 110px 1fr; gap: 0 18px; padding-top: 14px; border-top: 1px dotted var(--line); }
+.about-facts dt { padding-top: 3px; color: var(--vein); }
+.about-facts dd { margin: 0; font-size: 1rem; line-height: 1.6; }
+/* motto + sketch: a taped notebook page, centred under the About content */
+.motto { position: relative; max-width: 760px; margin: 64px auto 0; padding: 30px 34px 22px; background: #FBF7EF; box-shadow: 0 12px 28px -18px rgba(70, 45, 25, 0.45); transform: rotate(-0.6deg); }
+.motto::before { content: ""; position: absolute; top: -11px; left: 50%; width: 90px; height: 22px; margin-left: -45px; background: rgba(214, 196, 160, 0.6); transform: rotate(2deg); }
+.motto blockquote { margin: 0 0 8px; padding: 0; border: 0; text-align: center; }
+.motto blockquote p { font: 600 1.4rem/1.3 var(--hand); color: var(--ink); }
+.motto .motto-svg { margin: 8px auto 0; }
+.motto figcaption { text-align: center; margin-top: 6px; }
+.motto-svg { display: block; width: 100%; max-width: 640px; height: auto; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.motto-svg .axes path { stroke: var(--ink); stroke-width: 1.4; opacity: 0.75; }
+.motto-svg .pt { fill: var(--muted); opacity: 0.7; }
+.motto-svg .pt.out { fill: var(--pink-ink); opacity: 1; }
+.motto-svg .ring { stroke: var(--pink); stroke-width: 2; }
+.motto-svg .pen { stroke: var(--pink-ink); stroke-width: 1.6; }
+.motto-svg .train { stroke: var(--blue-ink); stroke-width: 2.2; }
+.motto-svg .val { stroke: var(--sage); stroke-width: 2; stroke-dasharray: 6 5; }
+.motto-svg .loss { stroke: var(--pink); stroke-width: 1.8; opacity: 0.85; }
+.motto-svg .goal { stroke: var(--line); stroke-width: 1.2; stroke-dasharray: 3 6; }
+.motto-svg text { stroke: none; font-family: var(--hand); }
+.motto-svg .lbl { fill: var(--pink-ink); font-size: 28px; font-weight: 600; }
+.motto-svg .lbl.small { fill: var(--muted); font-size: 20px; }
+.motto-svg .val-t { fill: var(--sage-ink); }
+.motto-svg .loss-t { fill: var(--pink-ink); }
+.motto-svg .goal-t { fill: var(--blue-ink); font-size: 22px; }
+.motto-svg .cap { fill: var(--ink); font-size: 22px; font-weight: 600; }
+.motto-svg .axis-t { fill: var(--muted); font: 13px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+@media (max-width: 720px) { .motto { padding: 24px 14px 16px; } .motto blockquote p { font-size: 1.2rem; } .about-facts div { grid-template-columns: 1fr; gap: 2px; } .about-lead { font-size: 1.15rem; } }
 
 /* ---------- Second ink: anatomical blue for links and fine details ---------- */
 a, .links a, .row-foot a { color: var(--vein); }
