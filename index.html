@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title and description are filled in from data.json by js/script.js -->
+  <title>Gracy Patel</title>
+  <meta name="description" content="">
+  <meta name="color-scheme" content="light dark">
+  <!-- Fonts: Cormorant Garamond (editorial headings), Inter (text), IBM Plex Mono (labels), Caveat (handwritten notes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" id="skip">Skip to content</a>
+
+  <!-- Sticky nav: links come from the "sections" list in data.json -->
+  <header class="topbar">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top" id="brand"></a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Index</button>
+      <ul id="nav-links"></ul>
+      <span id="nav-cta"></span>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="top" class="hero wrap" aria-label="Introduction"></section>
+    <div id="sections"></div>
+    <noscript><p class="wrap">This site needs JavaScript to load its content.</p></noscript>
+  </main>
+
+  <footer class="footer wrap" id="footer"></footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

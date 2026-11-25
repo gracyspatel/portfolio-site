@@ -1,0 +1,367 @@
+{
+  "profile": {
+    "name": "Gracy Patel",
+    "roles": ["Software Engineer", "ML Engineer", "Designer"],
+    "intro": "I build software and machine-learning systems, and I like knowing how they work underneath. I've shipped full-stack products professionally, built ML models in industry and research, and I'm now studying AI at USC.",
+    "status": "MS Computer Science (AI), USC · Open to Summer 2027 SWE & ML internships",
+    "tagline": "Software and ML engineer. MS CS (AI) at USC.",
+    "location": "Los Angeles, CA",
+    "email": "gracy.patel@usc.edu",
+    "resume": "assets/Resume_5_0.pdf",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/gracyspatel", "primary": true },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/gracy-patel/", "primary": true },
+      { "label": "LeetCode", "url": "https://leetcode.com/gracyP/" },
+      { "label": "Hugging Face", "url": "https://huggingface.co/gracyp" },
+      { "label": "Kaggle", "url": "https://www.kaggle.com/gracy1168" },
+      { "label": "Medium", "url": "https://medium.com/@gracy1168" }
+    ]
+  },
+
+  "labels": {
+    "concept": "The Anatomy of Intelligence",
+    "plate": "Plate",
+    "explore": "Explore my work",
+    "resume": "Résumé",
+    "email": "Email",
+    "copy": "Copy",
+    "copied": "Copied",
+    "skip": "Skip to content",
+    "menu": "Index",
+    "heroCaption": "Encephalon of an engineer, lateral view. Each region is labelled with the work it stands for.",
+    "dimension": "Lateral view",
+    "study": "Study",
+    "problem": "Problem",
+    "contribution": "Contribution",
+    "results": "Results",
+    "stack": "Stack",
+    "code": "Code",
+    "link": "Live demo",
+    "appendix": "Appendix · Further studies",
+    "seenIn": "Seen in",
+    "more": "More",
+    "coursework": "Coursework",
+    "certificates": "Certificates",
+    "neuronCaption": "A neuron, drawn the way the old anatomy plates did. Ideas branch the same way.",
+    "fieldNotes": "Field notes",
+    "contactTitle": "Write to me.",
+    "contactMessage": "I'm looking for Summer 2027 internships in software engineering and machine learning. Email is the fastest way to reach me.",
+    "colophon": "Set in Cormorant Garamond, Inter, IBM Plex Mono and Caveat. Built with plain HTML, CSS and JavaScript."
+  },
+
+  "notes": {
+    "hero": "start here",
+    "heroFigure": "hover a number",
+    "work": "explore my work",
+    "study": "the interesting part",
+    "scratch": "built from scratch",
+    "anatomy": "my technical backbone",
+    "research": "currently exploring...",
+    "about": "a little more about me"
+  },
+
+  "sections": [
+    { "id": "work", "num": "II", "nav": "Work", "title": "Selected Work", "caption": "Four studies, each with the problem, my part, the structure and the results." },
+    { "id": "anatomy", "num": "III", "nav": "Anatomy", "title": "Technical Anatomy", "caption": "Seven systems, from C1 to C7." },
+    { "id": "timeline", "num": "IV", "nav": "Timeline", "title": "Experience & Education", "caption": "A chronological record, newest first." },
+    { "id": "research", "num": "V", "nav": "Research", "title": "Research & Thinking", "caption": "What I'm exploring, and how I test ideas." },
+    { "id": "about", "num": "VI", "nav": "About", "title": "About" },
+    { "id": "contact", "num": "VII", "nav": "Contact", "title": "Contact" }
+  ],
+
+  "anatomy": [
+    { "part": "Lobus frontalis", "maps": "Planning & system design" },
+    { "part": "Lobus parietalis", "maps": "Algorithms & reasoning" },
+    { "part": "Lobus temporalis", "maps": "Language: NLP & LLMs" },
+    { "part": "Lobus occipitalis", "maps": "Vision: design & UI" },
+    { "part": "Cerebellum", "maps": "Optimization" },
+    { "part": "Truncus encephali", "maps": "Backend & data" }
+  ],
+
+  "projects": [
+    {
+      "name": "HeirsAgent",
+      "featured": true,
+      "context": "USC CSCI 561 Foundations of AI",
+      "dates": "Spring 2026",
+      "summary": "A game-playing agent that searches deep and still moves on time.",
+      "problem": "Play Heirs, a 12×12 two-player strategy game (24 pieces per side, win by capturing the opponent's Prince), strongly within a ~300-second game clock.",
+      "contribution": "Built the agent's search, move ordering, evaluation and time management, in C++17 with an earlier Python draft.",
+      "results": [
+        "Beat the professor's agent and other students' agents",
+        "Placed top 10 in the class-wide tournament run on the professor's server"
+      ],
+      "tags": ["C++17", "Python", "Minimax", "Alpha-beta pruning"],
+      "repo": "heirs-agent",
+      "figure": {
+        "type": "flow",
+        "caption": "Search loop. Iterative deepening repeats B–E until the per-move time budget runs out.",
+        "steps": [
+          { "label": "Board state", "note": "12×12 board, 24 pieces per side" },
+          { "label": "Move ordering", "note": "captures first, by captured-piece value; last iteration's best move first" },
+          { "label": "Alpha-beta search", "note": "minimax with pruning, one ply deeper each iteration" },
+          { "label": "Evaluation", "note": "material, centrality, Baby advancement; the Prince outweighs all" },
+          { "label": "Time check", "note": "std::chrono budget with a safety reserve and a fast fallback" }
+        ]
+      }
+    },
+    {
+      "name": "DNA Sequence Alignment",
+      "featured": true,
+      "context": "USC CSCI 570 Analysis of Algorithms",
+      "team": "Group project",
+      "dates": "Apr – May 2026",
+      "summary": "Two classic alignment algorithms, measured for time and memory.",
+      "problem": "Global DNA alignment with standard dynamic programming needs O(mn) memory, which becomes the bottleneck as sequences grow.",
+      "results": [
+        "Hirschberg's divide-and-conquer cut peak memory by 90.4% at m+n = 128, rising to 99.8% at m+n = 4,096",
+        "Trade-off: 1.3–1.9× slower than Needleman-Wunsch",
+        "Identical optimal cost in 200 of 200 randomized differential tests"
+      ],
+      "tags": ["Python", "Dynamic programming", "Divide and conquer", "tracemalloc"],
+      "repo": "dna-sequence-alignment",
+      "figure": {
+        "type": "bars",
+        "caption": "Peak memory at m+n = 4,096, measured with tracemalloc. Same optimal alignment cost.",
+        "unit": "MB",
+        "bars": [
+          { "label": "Needleman-Wunsch · O(mn) space", "value": 147.8 },
+          { "label": "Hirschberg · O(m+n) space", "value": 0.3 }
+        ]
+      }
+    },
+    {
+      "name": "MCPProbe",
+      "featured": true,
+      "status": "In progress",
+      "context": "USC NLP course",
+      "team": "6-person team",
+      "dates": "Fall 2026",
+      "summary": "Testing whether published defenses for AI agents hold up.",
+      "problem": "Published defenses against tool poisoning in MCP-based AI agents report strong results. Do they hold up when someone else tests them?",
+      "contribution": "With one teammate, I reimplemented MCP Guardian from its paper and tested it against MCP-Guard on the MCPTox dataset.",
+      "results": [
+        "Preliminary: MCP Guardian misses tool-description attacks that don't match its regex patterns",
+        "Simply rewording a known malicious prompt is enough to evade it"
+      ],
+      "tags": ["LLM agents", "MCP", "AI security", "Python"],
+      "figure": {
+        "type": "flow",
+        "caption": "Test path. A reworded attack passes the defense's patterns without being flagged.",
+        "steps": [
+          { "label": "Known malicious tool description", "note": "from the MCPTox dataset" },
+          { "label": "Reworded version", "note": "same intent, different wording" },
+          { "label": "MCP Guardian", "note": "our reimplementation of the published defense; regex-based detection" },
+          { "label": "Not flagged", "note": "preliminary finding" }
+        ]
+      }
+    },
+    {
+      "name": "Verve",
+      "featured": true,
+      "context": "Personal project",
+      "team": "Solo",
+      "dates": "Jan 2026 – present",
+      "summary": "A full-stack finance tracker where balances can't drift.",
+      "problem": "Track accounts, income, expenses, repayments and transfers for my own use, with balances that always stay consistent.",
+      "contribution": "Designed and built it alone. I hand-wrote the first version, then refactored and extended it with Claude as a coding agent.",
+      "results": [
+        "Working dashboard, unified ledger with filters, per-person history with CSV statements, and 6-month analytics",
+        "Used with my own data; not deployed publicly"
+      ],
+      "tags": ["Next.js 15", "React 19", "Express 5", "MySQL 8", "JWT"],
+      "repo": "verve",
+      "figure": {
+        "type": "flow",
+        "caption": "Request path for logging an expense: one transaction writes the entry and updates the balance.",
+        "steps": [
+          { "label": "Next.js 15 · React 19", "note": "dashboard, ledger and analytics pages" },
+          { "label": "Express 5 REST API", "note": "JWT in an httpOnly cookie, checked by requireAuth middleware" },
+          { "label": "MySQL 8", "note": "insert + balance update inside one database transaction" }
+        ]
+      }
+    },
+    {
+      "name": "Neptune Rover Search",
+      "dates": "Mar 2026",
+      "description": "Plans a rover's route over a 3D waypoint graph under elevation-dependent energy and momentum constraints using BFS, UCS and A* (USC CSCI 561). Passed all 50 provided test cases.",
+      "tags": ["Python", "A*", "Search"],
+      "repo": "neptune-rover-search"
+    },
+    {
+      "name": "Backpropagation & Gradient Descent Visualizer",
+      "scratch": true,
+      "description": "Backpropagation and gradient descent implemented from first principles, with no ML libraries.",
+      "tags": ["From scratch", "Optimization"]
+    },
+    {
+      "name": "KV Cache",
+      "scratch": true,
+      "description": "A KV cache built up step by step, starting from a bigram model.",
+      "tags": ["From scratch", "LLM inference"]
+    },
+    {
+      "name": "Amazon Review Sentiment + Bigram Language Model",
+      "dates": "Fall 2026",
+      "description": "TF-IDF sentiment classifiers on a balanced 200K-review sample; logistic regression reached 91.1% test accuracy. A hand-written add-k bigram language model lowered test perplexity from 580 to 231.",
+      "tags": ["Python", "NLP", "scikit-learn"]
+    },
+    {
+      "name": "CodeNext",
+      "description": "LeetCode next-question recommender and difficulty predictor on 1,800+ problems. Compared Naive Bayes, Random Forest and XGBoost, raising accuracy from a 44% baseline to ~80%.",
+      "tags": ["XGBoost", "TF-IDF", "React", "Flask"]
+    },
+    {
+      "name": "WbNews",
+      "description": "Scrapes live news, classifies articles into 4 genres with an SVM (86% accuracy) using TF-IDF and Word2Vec features, and flags fake news. Served through a Flask API to a React frontend.",
+      "tags": ["NLP", "SVM", "React", "Flask"]
+    },
+    {
+      "name": "Recommendo",
+      "description": "Content-based movie recommender using bag-of-words and cosine similarity over title, description and tagline; returns 5 similar movies, evaluated with precision, recall and RMSE.",
+      "tags": ["Recommender", "NLP"]
+    }
+  ],
+
+  "skills": [
+    { "group": "AI & Machine Learning", "items": ["PyTorch", "TensorFlow", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Random Forest", "XGBoost", "SVM", "Neural networks"], "seenIn": "1Rivet, CodeNext, WbNews, backprop visualizer" },
+    { "group": "LLMs, RAG & NLP", "items": ["LLMs", "AI agents", "MCP", "RAG", "LangGraph", "TF-IDF", "Word2Vec", "Language modeling"], "seenIn": "MCPProbe, sentiment + bigram LM, WbNews" },
+    { "group": "Software Engineering", "items": ["Python", "C++", "Java", "JavaScript", "TypeScript", "REST APIs", "JWT auth & RBAC"], "seenIn": "Codise, Verve, HeirsAgent" },
+    { "group": "Backend & Databases", "items": ["Node.js", "Express", "Flask", "FastAPI", "Django", "GraphQL", "MySQL", "PostgreSQL", "MongoDB", "AWS"], "seenIn": "Codise, Verve, 1Rivet" },
+    { "group": "Frontend & UI/UX", "items": ["React", "Next.js", "Redux", "Tailwind CSS", "Chart.js", "Material UI", "Responsive design", "SEO"], "seenIn": "Codise, Verve, Avea Media" },
+    { "group": "Algorithms & System Design", "items": ["Dynamic programming", "Divide and conquer", "BFS, UCS, A*", "Minimax & alpha-beta", "Database transactions", "Client–server architecture"], "seenIn": "DNA alignment, Neptune Rover, HeirsAgent, Verve" },
+    { "group": "Research & Optimization", "items": ["Large-scale optimization", "Gradient descent", "Reproducing published methods", "Benchmarking & differential testing", "Geospatial analysis", "Literature review"], "seenIn": "ISE 633, MCPProbe, DNA alignment, ISRO" }
+  ],
+
+  "timeline": [
+    {
+      "type": "Education",
+      "dates": "Jan 2026 – Dec 2027 (expected)",
+      "title": "MS in Computer Science (Artificial Intelligence)",
+      "org": "University of Southern California, Viterbi School of Engineering",
+      "location": "Los Angeles, CA",
+      "coursework": ["Foundations of Artificial Intelligence", "Analysis of Algorithms", "Applied Natural Language Processing", "Large Scale Optimization for Machine Learning", "Web Technologies"]
+    },
+    {
+      "type": "Experience",
+      "dates": "Jan 2024 – Jul 2025",
+      "title": "Software Developer",
+      "org": "Codise",
+      "location": "Remote",
+      "bullets": [
+        "Built core modules of a full-stack print-operations platform in React, Next.js and Redux, including 15+ reusable UI components for customers, orders and print-job tracking.",
+        "Built and integrated 10+ REST APIs with Node.js and Express on SQL, with JWT authentication and role-based access control.",
+        "Automated status updates across 4+ production stages, giving end-to-end print-job tracking and less manual coordination.",
+        "Shipped 4 responsive, SEO-optimized landing pages in React for clients in healthcare, automotive and technology."
+      ],
+      "tags": ["React", "Next.js", "Redux", "Node.js", "Express", "SQL", "JWT"]
+    },
+    {
+      "type": "Internship",
+      "dates": "Jul 2023 – Dec 2023",
+      "title": "Machine Learning Intern",
+      "org": "1Rivet",
+      "location": "Valsad, Gujarat, India",
+      "bullets": [
+        "Built an end-to-end employee-performance prediction system on 1,000+ workforce records; tuned a Random Forest classifier with stratified cross-validation to ~85% accuracy.",
+        "Wrote preprocessing and feature-engineering pipelines (missing values, encoding, scaling, class balancing, feature selection) that improved predictive performance by 15–20%.",
+        "Used feature-importance analysis to find the main drivers of performance, and helped deploy validated models into Django/Flask web apps."
+      ],
+      "tags": ["Random Forest", "Feature engineering", "Django", "Flask"]
+    },
+    {
+      "type": "Research",
+      "dates": "Dec 2022 – May 2023",
+      "title": "Research Assistant",
+      "org": "ISRO Space Applications Centre (SAC)",
+      "location": "Ahmedabad, India (Remote)",
+      "bullets": [
+        "Led analytics development of a geospatial web platform assessing the health of 10+ water bodies across 24 months of satellite imagery.",
+        "Processed multi-source datasets in Google Earth Engine, deriving 6+ water-quality indicators across 60+ location–parameter combinations.",
+        "Built interactive time-series dashboards and turned the results into model-ready datasets for downstream model training."
+      ],
+      "tags": ["Google Earth Engine", "Geospatial data", "Data visualization"]
+    },
+    {
+      "type": "Freelance",
+      "dates": "Jun 2021 – Jul 2021",
+      "title": "Freelance Software Developer",
+      "org": "Avea Media Pvt Ltd",
+      "bullets": ["Built an interactive data-visualization dashboard with the data analytics team."],
+      "tags": ["React", "Chart.js", "Material UI"]
+    },
+    {
+      "type": "Distinction",
+      "dates": "2020",
+      "title": "1st place, DEPSTAR Coding Competition",
+      "org": "University level"
+    },
+    {
+      "type": "Distinction",
+      "dates": "2020",
+      "title": "1st in class, Semester 3",
+      "org": "B.Tech CSE, CHARUSAT · SGPA 9.88/10"
+    },
+    {
+      "type": "Education",
+      "dates": "May 2019 – May 2023",
+      "title": "B.Tech in Computer Science and Engineering",
+      "org": "Charotar University of Science and Technology (CHARUSAT)",
+      "location": "Nadiad, Gujarat, India",
+      "bullets": [
+        "CGPA 9.38/10 · Distinction",
+        "Led a 3-person Smart India Hackathon team that cleared Round 1 with a face-recognition attendance system (Python, OpenCV).",
+        "Helped organize university-level seminars and coding competitions with the DEPSTAR Coding Club."
+      ],
+      "coursework": ["Machine Learning", "Artificial Intelligence", "Data Science & Analytics", "Data Structures & Algorithms", "Design & Analysis of Algorithms", "Operating Systems", "Database Management Systems", "Computer Networks"]
+    }
+  ],
+
+  "certificates": [
+    { "name": "TensorFlow for Deep Learning Bootcamp", "issuer": "Udemy" },
+    { "name": "Object Oriented Programming in Java", "issuer": "UC San Diego, Coursera" },
+    { "name": "Introduction to Machine Learning", "issuer": "Kaggle" },
+    { "name": "Microsoft AI Classroom Series", "issuer": "Microsoft" },
+    { "name": "Introduction to Virtual Reality", "issuer": "University of London, Coursera" }
+  ],
+
+  "research": [
+    {
+      "title": "Do published agent defenses hold up?",
+      "status": "Current · course project",
+      "text": "In MCPProbe, a teammate and I reimplemented MCP Guardian from its paper and tested it on MCPTox. Early result: rewording a known attack is enough to get past it. Next, I want a hard number: detection rate on original versus reworded attacks."
+    },
+    {
+      "title": "Reinforcement learning for network routing",
+      "status": "In progress",
+      "text": "Using reinforcement learning for dynamic routing and load balancing in software-defined networks. It continues the SDN routing interest I started in undergrad."
+    },
+    {
+      "title": "SDN and information-centric networking",
+      "status": "Undergraduate · CHARUSAT",
+      "text": "Literature reviews on routing in software-defined networks, the benefits and drawbacks of separating control from forwarding, and how information-centric networks retrieve content by name instead of by host."
+    },
+    {
+      "title": "Models from first principles",
+      "status": "Past experiments",
+      "text": "I implemented backpropagation and gradient descent with no ML libraries, and built a KV cache up from a bigram model, to understand what the libraries hide."
+    },
+    {
+      "title": "A small inference engine in C++",
+      "status": "Idea stage",
+      "text": "Planning a C++ project that extends the KV cache work into a small LLM inference engine: my own matrix multiply, multithreading, and a tokens-per-second benchmark against Python."
+    }
+  ],
+
+  "about": [
+    "I studied computer science at CHARUSAT, then worked across the stack: a geospatial analytics platform at ISRO's Space Applications Centre, ML models at 1Rivet, and a full-stack operations platform at Codise. Now I'm at USC, focusing on artificial intelligence.",
+    "I'm most interested in where AI, computer science and design meet. I like taking systems apart to see how they work, and I care about how things look as much as how they work. Away from code, I paint."
+  ],
+  "facts": [
+    { "label": "Based in", "value": "Los Angeles, CA" },
+    { "label": "Studying", "value": "MS CS (AI), USC · Dec 2027" },
+    { "label": "Open to", "value": "Summer 2027 SWE & ML internships" },
+    { "label": "Interests", "value": "ML systems, AI agents, NLP, design" },
+    { "label": "Outside code", "value": "Painting" }
+  ]
+}
