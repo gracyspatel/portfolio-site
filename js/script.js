@@ -30,13 +30,17 @@ const fold = (label, inner) => (inner.trim() ? `<details><summary>${esc(label)}<
 // ---------- Hand-drawn annotation arrows (decorative) ----------
 // Each shape is a slightly wobbly curve plus a loose two-stroke arrowhead. CSS flips/rotates them per placement.
 const ARROWS = {
-  swoop: ['M4 10 C16 4 34 3 48 11 C59 17 66 27 69 39', 'M69 39 C65 36.5 61 35.5 57.5 36 M69 39 C69.5 35 69 31 67.5 27.5'],
-  curl: ['M4 44 C8 26 24 12 36 20 C45 26 37 37 30 30 C22 21 40 8 74 12', 'M74 12 C70 9 66 8 62.5 8.5 M74 12 C70.5 14 68 16.5 66.5 19'],
-  hook: ['M12 4 C6 18 10 34 30 46', 'M30 46 C26 46.5 22.5 45.5 20 44 M30 46 C28.5 42.5 28 39 28.5 35.5'],
+  swoop: ['0 0 80 50', 'M4 10 C16 4 34 3 48 11 C59 17 66 27 69 39', 'M69 39 C65 36.5 61 35.5 57.5 36 M69 39 C69.5 35 69 31 67.5 27.5'],
+  curl: ['0 0 80 50', 'M4 44 C8 26 24 12 36 20 C45 26 37 37 30 30 C22 21 40 8 74 12', 'M74 12 C70 9 66 8 62.5 8.5 M74 12 C70.5 14 68 16.5 66.5 19'],
+  hook: ['0 0 80 50', 'M12 4 C6 18 10 34 30 46', 'M30 46 C26 46.5 22.5 45.5 20 44 M30 46 C28.5 42.5 28 39 28.5 35.5'],
+  // long, flowing shapes
+  long: ['0 0 220 90', 'M6 16 C48 2 84 30 106 48 C130 66 166 78 200 62', 'M200 62 C195 60 190 60 185 62 M200 62 C197 66 195 70 194 75'],
+  loop: ['0 0 240 110', 'M8 92 C42 100 72 72 66 50 C60 30 36 36 44 54 C54 78 112 80 152 58 C178 44 202 28 230 22', 'M230 22 C225 20 220 20 216 21 M230 22 C227 26 224 30 223 34'],
+  drop: ['0 0 120 160', 'M14 8 C70 12 98 48 82 82 C68 112 78 140 104 152', 'M104 152 C99 152 95 151 92 149 M104 152 C103 147 103 143 104 139'],
 };
 const arrow = (shape) => {
-  const [body, head] = ARROWS[shape] || ARROWS.swoop;
-  return `<svg class="ha" viewBox="0 0 80 50" aria-hidden="true" focusable="false"><path d="${body}"/><path d="${head}"/></svg>`;
+  const [vb, body, head] = ARROWS[shape] || ARROWS.swoop;
+  return `<svg class="ha ha-${shape}" viewBox="${vb}" aria-hidden="true" focusable="false"><path d="${body}"/><path d="${head}"/></svg>`;
 };
 // Handwritten note + arrow. color: pink | sage | blue. Purely decorative, so hidden from screen readers.
 const note = (text, shape, color, cls = '') =>
@@ -139,18 +143,6 @@ function figure(f, num) {
     <figcaption><span class="fig-no">Fig. ${num}</span> ${esc(f.caption)}</figcaption></figure>`;
 }
 
-// Atlas-style contents: each plate with a count, e.g. "4 studies · 7 more". "{key}" counts come from data.json lists.
-function contents(d) {
-  const all = d.projects || [];
-  const n = { skills: (d.skills || []).length, featured: all.filter((p) => p.featured).length, more: all.filter((p) => !p.featured).length,
-    experience: (d.experience || []).length, education: (d.education || []).length, research: (d.research || []).length };
-  const rows = (d.sections || []).map((s) => `
-    <li><a href="#${esc(s.id)}"><span class="nn">${esc(s.num || '')}</span><span class="t">${esc(s.title)}</span>
-      <span class="dots" aria-hidden="true"></span><span class="c">${esc((s.count || '').replace(/\{(\w+)\}/g, (m, k) => n[k] ?? ''))}</span></a></li>`).join('');
-  return rows ? `<nav class="contents" aria-label="${esc(d.labels.contents)}">
-    <p class="spec-head"><span>${esc(d.labels.contents)}</span><span>${esc(d.labels.plate)} I</span></p><ol>${rows}</ol></nav>` : '';
-}
-
 // ---------- Hero (Plate I) ----------
 function renderHero(d) {
   const p = d.profile, L = d.labels, N = d.notes || {};
@@ -159,17 +151,21 @@ function renderHero(d) {
     <div class="hero-text">
       <p class="kicker">${esc(L.plate)} I · ${esc(L.concept)}</p>
       <h1>${esc(p.name)}</h1>
+      ${note(N.heroRight, 'hook', 'blue', 'hn-m')}
       <ul class="roles">${(p.roles || []).map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
       ${p.intro ? `<p class="intro">${esc(p.intro)}</p>` : ''}
       ${p.status ? `<p class="status">${esc(p.status)}</p>` : ''}
+      ${note(N.heroLeft, 'hook', 'sage', 'hn-m')}
       <div class="cta">
         ${link('#work', L.explore, 'btn primary')}
         ${resumeBtn(d, '')}
         ${primaryLinks(d, 'btn ghost')}
       </div>
-      ${note(N.hero, 'swoop', 'pink', 'hn-hero')}
+      <div class="cta-notes">${note(N.hero, 'swoop', 'pink', 'hn-hero')}${note(N.code, 'swoop', 'blue', 'hn-hero hn-code')}</div>
     </div>
-    ${contents(d)}
+    ${note(N.atlas, 'long', 'pink', 'hn-side hn-atlas')}
+    ${note(N.heroLeft, 'long', 'sage', 'hn-side hn-left')}
+    ${note(N.heroRight, 'loop', 'blue', 'hn-side hn-right')}
   </div>`;
 }
 
@@ -186,6 +182,7 @@ function record(d, list = []) {
       <li class="tl-item t-${slug(t.type)}">
         <p class="tl-date">${esc(t.dates)}</p>
         <div class="tl-body">
+          ${note(t.note, 'long', 'blue', 'hn-item hn-extra')}
           <p class="kicker">${esc(t.type)}</p>
           <h3>${esc(t.title)}</h3>
           <p class="meta">${meta(t.org, t.location)}</p>
@@ -207,6 +204,7 @@ const render = {
 
     const studies = all.filter((p) => p.featured).map((p, i) => `
       <article class="study" id="p-${slug(p.name)}">
+        ${note(p.note, 'hook', ['pink', 'sage', 'blue'][i % 3], 'hn-card hn-extra')}
         <p class="kicker">${esc(L.study)} ${P}.${i + 1}${p.status ? ` · <span class="live">${esc(p.status)}</span>` : ''}</p>
         <h3>${esc(p.name)}</h3>
         <p class="meta">${meta(p.context, p.team, p.dates)}</p>
@@ -235,12 +233,12 @@ const render = {
   },
 
   // Skills as seven compact rows (C1–C7), each with a small vertebra on one spine line.
-  anatomy: (d) => `<ol class="spine">${(d.skills || []).map((s, i) => `
+  anatomy: (d) => `<div class="spine-wrap">${note((d.notes || {}).focus, 'long', 'pink', 'hn-focus hn-extra')}<ol class="spine">${(d.skills || []).map((s, i) => `
     <li class="vert">
       ${VERTEBRA}
       <p class="sys-name"><span class="kicker">C${i + 1}</span> ${esc(s.group)}</p>
       <p class="items">${(s.items || []).map(esc).join(' · ')}</p>
-    </li>`).join('')}</ol>`,
+    </li>`).join('')}</ol></div>`,
 
   // Work history and education share one record layout; certificates follow education.
   experience: (d) => record(d, d.experience),
@@ -253,7 +251,7 @@ const render = {
   research: (d) => `
     <div class="research">
       <ol class="notes">${(d.research || []).map((r, i) => `
-        <li><p class="kicker">${plateNo(d, 'research')}.${i + 1} · ${esc(r.status)}</p><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>
+        <li>${note(r.note, 'long', 'sage', 'hn-item hn-extra')}<p class="kicker">${plateNo(d, 'research')}.${i + 1} · ${esc(r.status)}</p><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>
         ${r.link ? `<p class="links">${link(r.link, 'Read ↗')}</p>` : ''}</li>`).join('')}</ol>
     </div>`,
 
@@ -270,7 +268,8 @@ const render = {
         ${L.contactMessage ? `<p class="contact-msg">${esc(L.contactMessage)}</p>` : ''}
         ${p.email ? `<p class="email-row">${link('mailto:' + p.email, p.email, 'email')}
           <button type="button" class="btn small" id="copy-email">${esc(L.copy)}</button>
-          <span class="status-msg" role="status" aria-live="polite"></span></p>` : ''}
+          <span class="status-msg" role="status" aria-live="polite"></span>
+          ${note((d.notes || {}).contact, 'long', 'pink', 'hn-contact')}</p>` : ''}
         <div class="cta">${primaryLinks(d, 'btn ghost')}${resumeBtn(d, '')}</div>
       </div>`;
   },
@@ -280,6 +279,14 @@ const render = {
 const SECTION_NOTES = { work: ['work', 'hook', 'pink'], anatomy: ['anatomy', 'swoop', 'blue'], research: ['research', 'swoop', 'sage'], about: ['about', 'hook', 'blue'] };
 
 // ---------- Interactions ----------
+
+// Nav: a soft shadow appears once the page has scrolled.
+function setupNavShadow() {
+  const bar = document.querySelector('.topbar');
+  const update = () => bar.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', update, { passive: true });
+  update();
+}
 
 // Mobile menu: the "Index" button opens and closes the list of sections.
 function setupMenu() {
@@ -347,14 +354,17 @@ function build(d) {
   document.getElementById('sections').innerHTML = html;
   document.getElementById('nav-links').innerHTML = nav;
 
-  const others = (p.links || []).filter((l) => !l.primary);
+  // Footer: name, tagline, every profile link + email, back to top, copyright
+  const all = [...(p.links || []).map((l) => link(l.url, l.label)), p.email ? link('mailto:' + p.email, p.email) : ''].filter(Boolean);
   document.getElementById('footer').innerHTML = `
-    <p class="colophon">${esc(L.colophon)}</p>
-    ${others.length ? `<p class="elsewhere">${others.map((l) => link(l.url, l.label)).join('')}</p>` : ''}
-    <p>© ${new Date().getFullYear()} ${esc(p.name)}</p>`;
+    <p class="f-name">${esc(p.name)}</p>
+    ${p.tagline ? `<p class="f-tag">${esc(p.tagline)}</p>` : ''}
+    ${all.length ? `<p class="f-links">${all.join('')}</p>` : ''}
+    <p class="f-meta"><a href="#top">${esc(L.top || 'Back to top')}</a><span>© ${new Date().getFullYear()} ${esc(p.name)}</span></p>`;
 
   setupBackdrop();
   setupMenu();
+  setupNavShadow();
   setupCopy(d);
   setupActiveNav();
 

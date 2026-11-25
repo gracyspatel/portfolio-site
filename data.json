@@ -64,9 +64,8 @@
     "certificates": "Certificates",
     "contactTitle": "Write to me.",
     "contactMessage": "I'm looking for Summer 2027 internships in software engineering and machine learning. Email is the fastest way to reach me.",
-    "colophon": "Set in Cormorant Garamond, IBM Plex Sans, IBM Plex Mono and Caveat. Built with plain HTML, CSS and JavaScript.",
-    "contents": "Contents",
-    "details": "Problem, contribution & figure"
+    "details": "Problem, contribution & figure",
+    "top": "Back to top ↑"
   },
   "notes": {
     "hero": "start here",
@@ -75,7 +74,13 @@
     "scratch": "built from scratch",
     "anatomy": "my technical backbone",
     "research": "currently exploring...",
-    "about": "a little more about me"
+    "about": "a little more about me",
+    "heroLeft": "open to internships, Summer 2027",
+    "heroRight": "a software engineer who paints",
+    "focus": "current focus",
+    "contact": "fastest way to reach me",
+    "atlas": "welcome to my atlas",
+    "code": "the code lives here"
   },
   "sections": [
     {
@@ -83,40 +88,35 @@
       "num": "II",
       "nav": "Anatomy",
       "title": "Technical Anatomy",
-      "caption": "Seven systems, from C1 to C7.",
-      "count": "{skills} systems"
+      "caption": "Seven systems, from C1 to C7."
     },
     {
       "id": "work",
       "num": "III",
       "nav": "Work",
       "title": "Selected Work",
-      "caption": "Four studies, each with the problem, my part, the structure and the results.",
-      "count": "{featured} studies · {more} more"
+      "caption": "Four studies, each with the problem, my part, the structure and the results."
     },
     {
       "id": "experience",
       "num": "IV",
       "nav": "Experience",
       "title": "Experience",
-      "caption": "Work, internships and research, newest first.",
-      "count": "{experience} roles"
+      "caption": "Work, internships and research, newest first."
     },
     {
       "id": "education",
       "num": "V",
       "nav": "Education",
       "title": "Education",
-      "caption": "Degrees, distinctions and certificates.",
-      "count": "{education} degrees"
+      "caption": "Degrees, distinctions and certificates."
     },
     {
       "id": "research",
       "num": "VI",
       "nav": "Research",
       "title": "Research & Thinking",
-      "caption": "What I'm exploring, and how I test ideas.",
-      "count": "{research} notes"
+      "caption": "What I'm exploring, and how I test ideas."
     },
     {
       "id": "about",
@@ -251,7 +251,8 @@
             "note": "std::chrono budget with a safety reserve and a fast fallback"
           }
         ]
-      }
+      },
+      "note": "beat my professor's agent!"
     },
     {
       "name": "DNA Sequence Alignment",
@@ -287,7 +288,8 @@
             "value": 0.3
           }
         ]
-      }
+      },
+      "note": "99.8% less memory"
     },
     {
       "name": "MCPProbe",
@@ -330,7 +332,8 @@
             "note": "preliminary finding"
           }
         ]
-      }
+      },
+      "note": "results still coming in"
     },
     {
       "name": "Verve",
@@ -370,7 +373,8 @@
             "note": "insert + balance update inside one database transaction"
           }
         ]
-      }
+      },
+      "note": "built for my own use"
     },
     {
       "name": "Neptune Rover Search",
@@ -461,7 +465,8 @@
         "Express",
         "SQL",
         "JWT"
-      ]
+      ],
+      "note": "my first full-time role"
     },
     {
       "type": "Internship",
@@ -496,7 +501,8 @@
         "Google Earth Engine",
         "Geospatial data",
         "Data visualization"
-      ]
+      ],
+      "note": "24 months of satellite data"
     },
     {
       "type": "Freelance",
@@ -550,7 +556,8 @@
         "Operating Systems",
         "Database Management Systems",
         "Computer Networks"
-      ]
+      ],
+      "note": "where it all started"
     }
   ],
   "certificates": [
@@ -599,7 +606,8 @@
     {
       "title": "A small inference engine in C++",
       "status": "Idea stage",
-      "text": "Planning a C++ project that extends the KV cache work into a small LLM inference engine: my own matrix multiply, multithreading, and a tokens-per-second benchmark against Python."
+      "text": "Planning a C++ project that extends the KV cache work into a small LLM inference engine: my own matrix multiply, multithreading, and a tokens-per-second benchmark against Python.",
+      "note": "next on my list"
     }
   ],
   "about": [
