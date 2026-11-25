@@ -1,23 +1,46 @@
 {
   "profile": {
     "name": "Gracy Patel",
-    "roles": ["Software Engineer", "ML Engineer", "Designer"],
+    "roles": [
+      "Software Engineer",
+      "ML Engineer",
+      "Designer"
+    ],
     "intro": "I build software and machine-learning systems, and I like knowing how they work underneath. I've shipped full-stack products professionally, built ML models in industry and research, and I'm now studying AI at USC.",
     "status": "MS Computer Science (AI), USC · Open to Summer 2027 SWE & ML internships",
     "tagline": "Software and ML engineer. MS CS (AI) at USC.",
     "location": "Los Angeles, CA",
-    "email": "gracy.patel@usc.edu",
+    "email": "gspatel@usc.edu",
     "resume": "assets/Resume_5_0.pdf",
     "links": [
-      { "label": "GitHub", "url": "https://github.com/gracyspatel", "primary": true },
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/gracy-patel/", "primary": true },
-      { "label": "LeetCode", "url": "https://leetcode.com/gracyP/" },
-      { "label": "Hugging Face", "url": "https://huggingface.co/gracyp" },
-      { "label": "Kaggle", "url": "https://www.kaggle.com/gracy1168" },
-      { "label": "Medium", "url": "https://medium.com/@gracy1168" }
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gracyspatel",
+        "primary": true
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/gracy-patel/",
+        "primary": true
+      },
+      {
+        "label": "LeetCode",
+        "url": "https://leetcode.com/gracyP/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/gracyp"
+      },
+      {
+        "label": "Kaggle",
+        "url": "https://www.kaggle.com/gracy1168"
+      },
+      {
+        "label": "Medium",
+        "url": "https://medium.com/@gracy1168"
+      }
     ]
   },
-
   "labels": {
     "concept": "The Anatomy of Intelligence",
     "plate": "Plate",
@@ -28,8 +51,6 @@
     "copied": "Copied",
     "skip": "Skip to content",
     "menu": "Index",
-    "heroCaption": "Encephalon of an engineer, lateral view. Each region is labelled with the work it stands for.",
-    "dimension": "Lateral view",
     "study": "Study",
     "problem": "Problem",
     "contribution": "Contribution",
@@ -38,20 +59,17 @@
     "code": "Code",
     "link": "Live demo",
     "appendix": "Appendix · Further studies",
-    "seenIn": "Seen in",
     "more": "More",
     "coursework": "Coursework",
     "certificates": "Certificates",
-    "neuronCaption": "A neuron, drawn the way the old anatomy plates did. Ideas branch the same way.",
-    "fieldNotes": "Field notes",
     "contactTitle": "Write to me.",
     "contactMessage": "I'm looking for Summer 2027 internships in software engineering and machine learning. Email is the fastest way to reach me.",
-    "colophon": "Set in Cormorant Garamond, Inter, IBM Plex Mono and Caveat. Built with plain HTML, CSS and JavaScript."
+    "colophon": "Set in Cormorant Garamond, IBM Plex Sans, IBM Plex Mono and Caveat. Built with plain HTML, CSS and JavaScript.",
+    "contents": "Contents",
+    "details": "Problem, contribution & figure"
   },
-
   "notes": {
     "hero": "start here",
-    "heroFigure": "hover a number",
     "work": "explore my work",
     "study": "the interesting part",
     "scratch": "built from scratch",
@@ -59,25 +77,135 @@
     "research": "currently exploring...",
     "about": "a little more about me"
   },
-
   "sections": [
-    { "id": "work", "num": "II", "nav": "Work", "title": "Selected Work", "caption": "Four studies, each with the problem, my part, the structure and the results." },
-    { "id": "anatomy", "num": "III", "nav": "Anatomy", "title": "Technical Anatomy", "caption": "Seven systems, from C1 to C7." },
-    { "id": "timeline", "num": "IV", "nav": "Timeline", "title": "Experience & Education", "caption": "A chronological record, newest first." },
-    { "id": "research", "num": "V", "nav": "Research", "title": "Research & Thinking", "caption": "What I'm exploring, and how I test ideas." },
-    { "id": "about", "num": "VI", "nav": "About", "title": "About" },
-    { "id": "contact", "num": "VII", "nav": "Contact", "title": "Contact" }
+    {
+      "id": "anatomy",
+      "num": "II",
+      "nav": "Anatomy",
+      "title": "Technical Anatomy",
+      "caption": "Seven systems, from C1 to C7.",
+      "count": "{skills} systems"
+    },
+    {
+      "id": "work",
+      "num": "III",
+      "nav": "Work",
+      "title": "Selected Work",
+      "caption": "Four studies, each with the problem, my part, the structure and the results.",
+      "count": "{featured} studies · {more} more"
+    },
+    {
+      "id": "experience",
+      "num": "IV",
+      "nav": "Experience",
+      "title": "Experience",
+      "caption": "Work, internships and research, newest first.",
+      "count": "{experience} roles"
+    },
+    {
+      "id": "education",
+      "num": "V",
+      "nav": "Education",
+      "title": "Education",
+      "caption": "Degrees, distinctions and certificates.",
+      "count": "{education} degrees"
+    },
+    {
+      "id": "research",
+      "num": "VI",
+      "nav": "Research",
+      "title": "Research & Thinking",
+      "caption": "What I'm exploring, and how I test ideas.",
+      "count": "{research} notes"
+    },
+    {
+      "id": "about",
+      "num": "VII",
+      "nav": "About",
+      "title": "About"
+    },
+    {
+      "id": "contact",
+      "num": "VIII",
+      "nav": "Contact",
+      "title": "Contact"
+    }
   ],
-
-  "anatomy": [
-    { "part": "Lobus frontalis", "maps": "Planning & system design" },
-    { "part": "Lobus parietalis", "maps": "Algorithms & reasoning" },
-    { "part": "Lobus temporalis", "maps": "Language: NLP & LLMs" },
-    { "part": "Lobus occipitalis", "maps": "Vision: design & UI" },
-    { "part": "Cerebellum", "maps": "Optimization" },
-    { "part": "Truncus encephali", "maps": "Backend & data" }
+  "skills": [
+    {
+      "group": "AI & Machine Learning",
+      "items": [
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "XGBoost",
+        "NumPy",
+        "Pandas"
+      ]
+    },
+    {
+      "group": "LLMs, RAG & NLP",
+      "items": [
+        "LLMs",
+        "AI agents",
+        "RAG",
+        "LangGraph",
+        "MCP",
+        "TF-IDF"
+      ]
+    },
+    {
+      "group": "Software Engineering",
+      "items": [
+        "Python",
+        "C++",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "REST APIs"
+      ]
+    },
+    {
+      "group": "Backend & Databases",
+      "items": [
+        "Node.js",
+        "Express",
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
+      ]
+    },
+    {
+      "group": "Frontend & UI/UX",
+      "items": [
+        "React",
+        "Next.js",
+        "Redux",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "group": "Algorithms & System Design",
+      "items": [
+        "Dynamic programming",
+        "Divide and conquer",
+        "A* / graph search",
+        "Alpha-beta search",
+        "DB transactions"
+      ]
+    },
+    {
+      "group": "Research & Optimization",
+      "items": [
+        "Large-scale optimization",
+        "Reproducing papers",
+        "Benchmarking",
+        "Geospatial analysis"
+      ]
+    }
   ],
-
   "projects": [
     {
       "name": "HeirsAgent",
@@ -91,17 +219,37 @@
         "Beat the professor's agent and other students' agents",
         "Placed top 10 in the class-wide tournament run on the professor's server"
       ],
-      "tags": ["C++17", "Python", "Minimax", "Alpha-beta pruning"],
+      "tags": [
+        "C++17",
+        "Python",
+        "Minimax",
+        "Alpha-beta pruning"
+      ],
       "repo": "heirs-agent",
       "figure": {
         "type": "flow",
         "caption": "Search loop. Iterative deepening repeats B–E until the per-move time budget runs out.",
         "steps": [
-          { "label": "Board state", "note": "12×12 board, 24 pieces per side" },
-          { "label": "Move ordering", "note": "captures first, by captured-piece value; last iteration's best move first" },
-          { "label": "Alpha-beta search", "note": "minimax with pruning, one ply deeper each iteration" },
-          { "label": "Evaluation", "note": "material, centrality, Baby advancement; the Prince outweighs all" },
-          { "label": "Time check", "note": "std::chrono budget with a safety reserve and a fast fallback" }
+          {
+            "label": "Board state",
+            "note": "12×12 board, 24 pieces per side"
+          },
+          {
+            "label": "Move ordering",
+            "note": "captures first, by captured-piece value; last iteration's best move first"
+          },
+          {
+            "label": "Alpha-beta search",
+            "note": "minimax with pruning, one ply deeper each iteration"
+          },
+          {
+            "label": "Evaluation",
+            "note": "material, centrality, Baby advancement; the Prince outweighs all"
+          },
+          {
+            "label": "Time check",
+            "note": "std::chrono budget with a safety reserve and a fast fallback"
+          }
         ]
       }
     },
@@ -118,15 +266,26 @@
         "Trade-off: 1.3–1.9× slower than Needleman-Wunsch",
         "Identical optimal cost in 200 of 200 randomized differential tests"
       ],
-      "tags": ["Python", "Dynamic programming", "Divide and conquer", "tracemalloc"],
+      "tags": [
+        "Python",
+        "Dynamic programming",
+        "Divide and conquer",
+        "tracemalloc"
+      ],
       "repo": "dna-sequence-alignment",
       "figure": {
         "type": "bars",
         "caption": "Peak memory at m+n = 4,096, measured with tracemalloc. Same optimal alignment cost.",
         "unit": "MB",
         "bars": [
-          { "label": "Needleman-Wunsch · O(mn) space", "value": 147.8 },
-          { "label": "Hirschberg · O(m+n) space", "value": 0.3 }
+          {
+            "label": "Needleman-Wunsch · O(mn) space",
+            "value": 147.8
+          },
+          {
+            "label": "Hirschberg · O(m+n) space",
+            "value": 0.3
+          }
         ]
       }
     },
@@ -144,15 +303,32 @@
         "Preliminary: MCP Guardian misses tool-description attacks that don't match its regex patterns",
         "Simply rewording a known malicious prompt is enough to evade it"
       ],
-      "tags": ["LLM agents", "MCP", "AI security", "Python"],
+      "tags": [
+        "LLM agents",
+        "MCP",
+        "AI security",
+        "Python"
+      ],
       "figure": {
         "type": "flow",
         "caption": "Test path. A reworded attack passes the defense's patterns without being flagged.",
         "steps": [
-          { "label": "Known malicious tool description", "note": "from the MCPTox dataset" },
-          { "label": "Reworded version", "note": "same intent, different wording" },
-          { "label": "MCP Guardian", "note": "our reimplementation of the published defense; regex-based detection" },
-          { "label": "Not flagged", "note": "preliminary finding" }
+          {
+            "label": "Known malicious tool description",
+            "note": "from the MCPTox dataset"
+          },
+          {
+            "label": "Reworded version",
+            "note": "same intent, different wording"
+          },
+          {
+            "label": "MCP Guardian",
+            "note": "our reimplementation of the published defense; regex-based detection"
+          },
+          {
+            "label": "Not flagged",
+            "note": "preliminary finding"
+          }
         ]
       }
     },
@@ -169,15 +345,30 @@
         "Working dashboard, unified ledger with filters, per-person history with CSV statements, and 6-month analytics",
         "Used with my own data; not deployed publicly"
       ],
-      "tags": ["Next.js 15", "React 19", "Express 5", "MySQL 8", "JWT"],
+      "tags": [
+        "Next.js 15",
+        "React 19",
+        "Express 5",
+        "MySQL 8",
+        "JWT"
+      ],
       "repo": "verve",
       "figure": {
         "type": "flow",
         "caption": "Request path for logging an expense: one transaction writes the entry and updates the balance.",
         "steps": [
-          { "label": "Next.js 15 · React 19", "note": "dashboard, ledger and analytics pages" },
-          { "label": "Express 5 REST API", "note": "JWT in an httpOnly cookie, checked by requireAuth middleware" },
-          { "label": "MySQL 8", "note": "insert + balance update inside one database transaction" }
+          {
+            "label": "Next.js 15 · React 19",
+            "note": "dashboard, ledger and analytics pages"
+          },
+          {
+            "label": "Express 5 REST API",
+            "note": "JWT in an httpOnly cookie, checked by requireAuth middleware"
+          },
+          {
+            "label": "MySQL 8",
+            "note": "insert + balance update inside one database transaction"
+          }
         ]
       }
     },
@@ -185,63 +376,71 @@
       "name": "Neptune Rover Search",
       "dates": "Mar 2026",
       "description": "Plans a rover's route over a 3D waypoint graph under elevation-dependent energy and momentum constraints using BFS, UCS and A* (USC CSCI 561). Passed all 50 provided test cases.",
-      "tags": ["Python", "A*", "Search"],
+      "tags": [
+        "Python",
+        "A*",
+        "Search"
+      ],
       "repo": "neptune-rover-search"
     },
     {
       "name": "Backpropagation & Gradient Descent Visualizer",
       "scratch": true,
       "description": "Backpropagation and gradient descent implemented from first principles, with no ML libraries.",
-      "tags": ["From scratch", "Optimization"]
+      "tags": [
+        "From scratch",
+        "Optimization"
+      ]
     },
     {
       "name": "KV Cache",
       "scratch": true,
       "description": "A KV cache built up step by step, starting from a bigram model.",
-      "tags": ["From scratch", "LLM inference"]
+      "tags": [
+        "From scratch",
+        "LLM inference"
+      ]
     },
     {
       "name": "Amazon Review Sentiment + Bigram Language Model",
       "dates": "Fall 2026",
       "description": "TF-IDF sentiment classifiers on a balanced 200K-review sample; logistic regression reached 91.1% test accuracy. A hand-written add-k bigram language model lowered test perplexity from 580 to 231.",
-      "tags": ["Python", "NLP", "scikit-learn"]
+      "tags": [
+        "Python",
+        "NLP",
+        "scikit-learn"
+      ]
     },
     {
       "name": "CodeNext",
       "description": "LeetCode next-question recommender and difficulty predictor on 1,800+ problems. Compared Naive Bayes, Random Forest and XGBoost, raising accuracy from a 44% baseline to ~80%.",
-      "tags": ["XGBoost", "TF-IDF", "React", "Flask"]
+      "tags": [
+        "XGBoost",
+        "TF-IDF",
+        "React",
+        "Flask"
+      ]
     },
     {
       "name": "WbNews",
       "description": "Scrapes live news, classifies articles into 4 genres with an SVM (86% accuracy) using TF-IDF and Word2Vec features, and flags fake news. Served through a Flask API to a React frontend.",
-      "tags": ["NLP", "SVM", "React", "Flask"]
+      "tags": [
+        "NLP",
+        "SVM",
+        "React",
+        "Flask"
+      ]
     },
     {
       "name": "Recommendo",
       "description": "Content-based movie recommender using bag-of-words and cosine similarity over title, description and tagline; returns 5 similar movies, evaluated with precision, recall and RMSE.",
-      "tags": ["Recommender", "NLP"]
+      "tags": [
+        "Recommender",
+        "NLP"
+      ]
     }
   ],
-
-  "skills": [
-    { "group": "AI & Machine Learning", "items": ["PyTorch", "TensorFlow", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Random Forest", "XGBoost", "SVM", "Neural networks"], "seenIn": "1Rivet, CodeNext, WbNews, backprop visualizer" },
-    { "group": "LLMs, RAG & NLP", "items": ["LLMs", "AI agents", "MCP", "RAG", "LangGraph", "TF-IDF", "Word2Vec", "Language modeling"], "seenIn": "MCPProbe, sentiment + bigram LM, WbNews" },
-    { "group": "Software Engineering", "items": ["Python", "C++", "Java", "JavaScript", "TypeScript", "REST APIs", "JWT auth & RBAC"], "seenIn": "Codise, Verve, HeirsAgent" },
-    { "group": "Backend & Databases", "items": ["Node.js", "Express", "Flask", "FastAPI", "Django", "GraphQL", "MySQL", "PostgreSQL", "MongoDB", "AWS"], "seenIn": "Codise, Verve, 1Rivet" },
-    { "group": "Frontend & UI/UX", "items": ["React", "Next.js", "Redux", "Tailwind CSS", "Chart.js", "Material UI", "Responsive design", "SEO"], "seenIn": "Codise, Verve, Avea Media" },
-    { "group": "Algorithms & System Design", "items": ["Dynamic programming", "Divide and conquer", "BFS, UCS, A*", "Minimax & alpha-beta", "Database transactions", "Client–server architecture"], "seenIn": "DNA alignment, Neptune Rover, HeirsAgent, Verve" },
-    { "group": "Research & Optimization", "items": ["Large-scale optimization", "Gradient descent", "Reproducing published methods", "Benchmarking & differential testing", "Geospatial analysis", "Literature review"], "seenIn": "ISE 633, MCPProbe, DNA alignment, ISRO" }
-  ],
-
-  "timeline": [
-    {
-      "type": "Education",
-      "dates": "Jan 2026 – Dec 2027 (expected)",
-      "title": "MS in Computer Science (Artificial Intelligence)",
-      "org": "University of Southern California, Viterbi School of Engineering",
-      "location": "Los Angeles, CA",
-      "coursework": ["Foundations of Artificial Intelligence", "Analysis of Algorithms", "Applied Natural Language Processing", "Large Scale Optimization for Machine Learning", "Web Technologies"]
-    },
+  "experience": [
     {
       "type": "Experience",
       "dates": "Jan 2024 – Jul 2025",
@@ -254,7 +453,15 @@
         "Automated status updates across 4+ production stages, giving end-to-end print-job tracking and less manual coordination.",
         "Shipped 4 responsive, SEO-optimized landing pages in React for clients in healthcare, automotive and technology."
       ],
-      "tags": ["React", "Next.js", "Redux", "Node.js", "Express", "SQL", "JWT"]
+      "tags": [
+        "React",
+        "Next.js",
+        "Redux",
+        "Node.js",
+        "Express",
+        "SQL",
+        "JWT"
+      ]
     },
     {
       "type": "Internship",
@@ -267,7 +474,12 @@
         "Wrote preprocessing and feature-engineering pipelines (missing values, encoding, scaling, class balancing, feature selection) that improved predictive performance by 15–20%.",
         "Used feature-importance analysis to find the main drivers of performance, and helped deploy validated models into Django/Flask web apps."
       ],
-      "tags": ["Random Forest", "Feature engineering", "Django", "Flask"]
+      "tags": [
+        "Random Forest",
+        "Feature engineering",
+        "Django",
+        "Flask"
+      ]
     },
     {
       "type": "Research",
@@ -280,27 +492,41 @@
         "Processed multi-source datasets in Google Earth Engine, deriving 6+ water-quality indicators across 60+ location–parameter combinations.",
         "Built interactive time-series dashboards and turned the results into model-ready datasets for downstream model training."
       ],
-      "tags": ["Google Earth Engine", "Geospatial data", "Data visualization"]
+      "tags": [
+        "Google Earth Engine",
+        "Geospatial data",
+        "Data visualization"
+      ]
     },
     {
       "type": "Freelance",
       "dates": "Jun 2021 – Jul 2021",
       "title": "Freelance Software Developer",
       "org": "Avea Media Pvt Ltd",
-      "bullets": ["Built an interactive data-visualization dashboard with the data analytics team."],
-      "tags": ["React", "Chart.js", "Material UI"]
-    },
+      "bullets": [
+        "Built an interactive data-visualization dashboard with the data analytics team."
+      ],
+      "tags": [
+        "React",
+        "Chart.js",
+        "Material UI"
+      ]
+    }
+  ],
+  "education": [
     {
-      "type": "Distinction",
-      "dates": "2020",
-      "title": "1st place, DEPSTAR Coding Competition",
-      "org": "University level"
-    },
-    {
-      "type": "Distinction",
-      "dates": "2020",
-      "title": "1st in class, Semester 3",
-      "org": "B.Tech CSE, CHARUSAT · SGPA 9.88/10"
+      "type": "Education",
+      "dates": "Jan 2026 – Dec 2027 (expected)",
+      "title": "MS in Computer Science (Artificial Intelligence)",
+      "org": "University of Southern California, Viterbi School of Engineering",
+      "location": "Los Angeles, CA",
+      "coursework": [
+        "Foundations of Artificial Intelligence",
+        "Analysis of Algorithms",
+        "Applied Natural Language Processing",
+        "Large Scale Optimization for Machine Learning",
+        "Web Technologies"
+      ]
     },
     {
       "type": "Education",
@@ -310,21 +536,45 @@
       "location": "Nadiad, Gujarat, India",
       "bullets": [
         "CGPA 9.38/10 · Distinction",
+        "1st in class, Semester 3 (SGPA 9.88/10)",
+        "1st place, DEPSTAR Coding Competition (university level, 2020)",
         "Led a 3-person Smart India Hackathon team that cleared Round 1 with a face-recognition attendance system (Python, OpenCV).",
         "Helped organize university-level seminars and coding competitions with the DEPSTAR Coding Club."
       ],
-      "coursework": ["Machine Learning", "Artificial Intelligence", "Data Science & Analytics", "Data Structures & Algorithms", "Design & Analysis of Algorithms", "Operating Systems", "Database Management Systems", "Computer Networks"]
+      "coursework": [
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Data Science & Analytics",
+        "Data Structures & Algorithms",
+        "Design & Analysis of Algorithms",
+        "Operating Systems",
+        "Database Management Systems",
+        "Computer Networks"
+      ]
     }
   ],
-
   "certificates": [
-    { "name": "TensorFlow for Deep Learning Bootcamp", "issuer": "Udemy" },
-    { "name": "Object Oriented Programming in Java", "issuer": "UC San Diego, Coursera" },
-    { "name": "Introduction to Machine Learning", "issuer": "Kaggle" },
-    { "name": "Microsoft AI Classroom Series", "issuer": "Microsoft" },
-    { "name": "Introduction to Virtual Reality", "issuer": "University of London, Coursera" }
+    {
+      "name": "TensorFlow for Deep Learning Bootcamp",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "Object Oriented Programming in Java",
+      "issuer": "UC San Diego, Coursera"
+    },
+    {
+      "name": "Introduction to Machine Learning",
+      "issuer": "Kaggle"
+    },
+    {
+      "name": "Microsoft AI Classroom Series",
+      "issuer": "Microsoft"
+    },
+    {
+      "name": "Introduction to Virtual Reality",
+      "issuer": "University of London, Coursera"
+    }
   ],
-
   "research": [
     {
       "title": "Do published agent defenses hold up?",
@@ -352,16 +602,8 @@
       "text": "Planning a C++ project that extends the KV cache work into a small LLM inference engine: my own matrix multiply, multithreading, and a tokens-per-second benchmark against Python."
     }
   ],
-
   "about": [
     "I studied computer science at CHARUSAT, then worked across the stack: a geospatial analytics platform at ISRO's Space Applications Centre, ML models at 1Rivet, and a full-stack operations platform at Codise. Now I'm at USC, focusing on artificial intelligence.",
     "I'm most interested in where AI, computer science and design meet. I like taking systems apart to see how they work, and I care about how things look as much as how they work. Away from code, I paint."
-  ],
-  "facts": [
-    { "label": "Based in", "value": "Los Angeles, CA" },
-    { "label": "Studying", "value": "MS CS (AI), USC · Dec 2027" },
-    { "label": "Open to", "value": "Summer 2027 SWE & ML internships" },
-    { "label": "Interests", "value": "ML systems, AI agents, NLP, design" },
-    { "label": "Outside code", "value": "Painting" }
   ]
 }
