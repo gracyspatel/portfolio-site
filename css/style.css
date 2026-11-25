@@ -314,7 +314,7 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 .hn-atlas { left: 2%; top: -6px; }
 /* subtle aside above the photo print */
 .hn-off { right: 30px; top: 92px; flex-direction: column; align-items: flex-end; gap: 0; opacity: 0.85; }
-.hn-off .hn-t { width: 230px; white-space: normal; text-align: right; font-size: 1.05rem; line-height: 1.15; }
+.hn-off .hn-t { width: 200px; white-space: normal; text-wrap: balance; text-align: right; font-size: 1.05rem; line-height: 1.15; }
 .hn-off .ha { width: 50px; height: 36px; margin-right: 70px; transform: rotate(6deg); }
 .cta-notes .hn-hero:only-child { margin-left: -230px; }
 @media (max-width: 720px) { .cta-notes .hn-hero:only-child { margin-left: -120px; } }
@@ -340,6 +340,7 @@ details[open] > :not(summary) { animation: rise .3s ease-out both; }
 /* ---------- Small portrait: over empty hero space on wide screens, in the navbar elsewhere ---------- */
 .print.hero-photo { position: absolute; right: 80px; top: 215px; margin: 0; transform: rotate(3deg); }
 .print.hero-photo img { width: 130px; height: 160px; object-position: 50% 25%; }
+.print.hero-photo figcaption { max-width: 130px; margin: 8px auto 0; font-size: 1.02rem; line-height: 1.1; }
 .print.hero-photo::before { width: 52px; margin-left: -26px; transform: rotate(-4deg); }
 /* About: two small framed circles beside the text */
 .about.with-photos { display: flex; gap: 48px; align-items: flex-start; max-width: 1000px; }
